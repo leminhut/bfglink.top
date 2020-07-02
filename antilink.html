@@ -61,7 +61,7 @@ var page = getQueryVariable("t");
 function countDown(){
 time--;
 gett("timecount").innerHTML = time;
-if(time == 0){
+if(time == -1){
 window.location = page;
 }
 }
