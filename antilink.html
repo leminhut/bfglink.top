@@ -1,43 +1,80 @@
-<script type='text/javascript'>
-//<![CDATA[
-function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
-    }
-    return (false);
-}
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='website' property='og:type'/><meta content='vi_VN' property='og:locale'/>
+<meta charset='utf-8'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
+<title>Blog Vnit</title>
+<style id='page-skin-1' type='text/css'><!--
+&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9559;&#9617;&#9617;&#9617;&#9608;&#9608;&#9559;&#9617;&#9617;&#9617;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9608;&#9608;&#9559;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;
+&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9559;&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9559;&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9559;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9553;&#9608;&#9608;&#9556;&#9552;&#9552;&#9552;&#9552;&#9565;&#9617;&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9559;&#9562;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9556;&#9565;&#9617;&#9617;&#9617;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9553;&#9608;&#9608;&#9556;&#9552;&#9552;&#9552;&#9552;&#9565;&#9562;&#9552;&#9552;&#9608;&#9608;&#9556;&#9552;&#9552;&#9565;
+&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9574;&#9565;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9553;&#9608;&#9608;&#9553;&#9617;&#9617;&#9608;&#9608;&#9553;&#9608;&#9608;&#9556;&#9608;&#9608;&#9559;&#9608;&#9608;&#9553;&#9608;&#9608;&#9553;&#9617;&#9617;&#9608;&#9608;&#9559;&#9617;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9553;&#9617;&#9562;&#9608;&#9608;&#9608;&#9608;&#9556;&#9565;&#9617;&#9617;&#9617;&#9617;&#9608;&#9608;&#9556;&#9608;&#9608;&#9559;&#9608;&#9608;&#9553;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9617;&#9617;&#9617;&#9608;&#9608;&#9553;&#9617;&#9617;&#9617;
+&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9559;&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9553;&#9608;&#9608;&#9553;&#9617;&#9617;&#9608;&#9608;&#9553;&#9608;&#9608;&#9553;&#9562;&#9608;&#9608;&#9608;&#9608;&#9553;&#9608;&#9608;&#9553;&#9617;&#9617;&#9562;&#9608;&#9608;&#9559;&#9608;&#9608;&#9556;&#9552;&#9552;&#9608;&#9608;&#9553;&#9617;&#9617;&#9562;&#9608;&#9608;&#9556;&#9565;&#9617;&#9617;&#9617;&#9617;&#9617;&#9608;&#9608;&#9553;&#9562;&#9608;&#9608;&#9608;&#9608;&#9553;&#9608;&#9608;&#9556;&#9552;&#9552;&#9565;&#9617;&#9617;&#9617;&#9617;&#9617;&#9608;&#9608;&#9553;&#9617;&#9617;&#9617;
+&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9574;&#9565;&#9608;&#9608;&#9553;&#9617;&#9617;&#9608;&#9608;&#9553;&#9562;&#9608;&#9608;&#9608;&#9608;&#9608;&#9556;&#9565;&#9608;&#9608;&#9553;&#9617;&#9562;&#9608;&#9608;&#9608;&#9553;&#9562;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9556;&#9565;&#9608;&#9608;&#9553;&#9617;&#9617;&#9608;&#9608;&#9553;&#9617;&#9617;&#9617;&#9608;&#9608;&#9553;&#9617;&#9617;&#9617;&#9608;&#9608;&#9559;&#9608;&#9608;&#9553;&#9617;&#9562;&#9608;&#9608;&#9608;&#9553;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9559;&#9617;&#9617;&#9617;&#9608;&#9608;&#9553;&#9617;&#9617;&#9617;
+&#9562;&#9552;&#9552;&#9552;&#9552;&#9552;&#9565;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9562;&#9552;&#9565;&#9617;&#9562;&#9552;&#9552;&#9552;&#9552;&#9565;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9562;&#9552;&#9552;&#9565;&#9617;&#9562;&#9552;&#9552;&#9552;&#9552;&#9552;&#9565;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9617;&#9562;&#9552;&#9565;&#9562;&#9552;&#9565;&#9617;&#9617;&#9562;&#9552;&#9552;&#9565;&#9562;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9565;&#9617;&#9617;&#9617;&#9562;&#9552;&#9565;&#9617;&#9617;&#9617;
+by Ngo Van Tuan ~ https://www.baongay.net
 
-var count = 6;
-var url  = getQueryVariable("url");
-
-function countDown(){
-    var timer = document.getElementById("timer");
-    if(count > 0){
-        count--;
-        timer.innerHTML = "Bạn sẽ được chuyển hướng đến <a href='"+url+"' rel='nofollow'>"+url+"</a> trong <b>"+count+"</b> giây.";
-        setTimeout("countDown()", 1);
-    }else{
-        window.location.href = url;
-    }
-}
-//]]>
-</script>
-
-<div class="chuyen-tiep">
-Đang chuyển hướng
-
-<gach></gach>
-<span id="timer">
-<script type="text/javascript">countDown();</script>
-</span></div>
+--></style>
 <style>
-.post-body { text-align: center; }
-gach { border-bottom: 1px dashed #7C7C7C; display: block; }
-.main-wrapper { width: 100%!important }
-.sidebar-wrapper { display: none; }
-</style>
+        body{margin:0;padding:0;font-family:Montserrat;background:#000;color:#fff}.center{display:flex;text-align:center;justify-content:center;align-items:center;min-height:100vh}.ring{position:absolute;width:200px;height:200px;border-radius:50%;animation:ring 2s linear infinite}@keyframes ring{0%{transform:rotate(0);box-shadow:1px 5px 2px #e65c00}50%{transform:rotate(180deg);box-shadow:1px 5px 2px #18b201}100%{transform:rotate(0360deg);box-shadow:1px 5px 2px #0456c8}}.ring::before{position:absolute;left:0;content:"";top:0;height:100%;width:100%;border-radius:50%;box-shadow:0 0 5px rgba(255,255,255,.3)}span{color:#737373;font-size:20px;text-transform:uppercase;letter-spacing:1px;animation:text 3s ease-in-out infinite}@keyframes text{50%{color:#000}}
+    </style>
+</head>
+<body>
+    <div class='center'>
+<div class='ring'></div>
+<span>bfglink.top<br/>Protected</span>
+</div>
+
+<script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+var time = 0;
+var page = getQueryVariable("t");
+function countDown(){
+time--;
+gett("timecount").innerHTML = time;
+if(time == -1){
+window.location = page;
+}
+}
+function gett(id){
+if(document.getElementById) return document.getElementById(id);
+if(document.all) return document.all.id;
+if(document.layers) return document.layers.id;
+if(window.opera) return window.opera.id;
+}
+function init(){
+if(gett('timecount')){
+setInterval(countDown, 1000);
+gett("timecount").innerHTML = time;
+}
+else{
+setTimeout(init, 50);
+}
+}
+document.onload = init();
+$(document).ready(function(){
+ $('.link-out-btn').click(function(){
+    window.location = page;
+ });
+ $('#linkout').text(page);
+});
+</script>
+<script>
+function closeWindow() {
+        window.open('','_parent','');
+        window.close();
+    }
+</script> 
+<span id="timecount"></span>
+</body>
+</html>
